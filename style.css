@@ -54,7 +54,7 @@ body {
 	background-color: #E4EDF1;
 	padding: 1rem;
 	box-shadow: 2px 2px 2px 0px rgba(85, 85, 85, 0.50);
-	animation: mensagemSaindo 0.7s ease;
+	animation: fadeUpMessage 0.7s ease;
 }
 
 .container img {
@@ -64,7 +64,7 @@ body {
 }
 
 .enableAnimation:hover{
-	animation: tremor 0.3s infinite;
+	animation: shakeAnimation 0.3s infinite;
 }
 
 .hidden {
@@ -95,7 +95,7 @@ body {
 	100% { background-position: 0% 50%; }
 }
 
-@keyframes tremor {
+@keyframes shakeAnimation {
   0% { transform: translate(0, 0); }
   20% { transform: translate(-2px, -2px); }
   40% { transform: translate(2px, -2px); }
@@ -104,7 +104,7 @@ body {
   100% { transform: translate(0, 0); }
 }
 
-@keyframes mensagemSaindo {
+@keyframes fadeUpMessage {
   0% { transform: translateY(100px) scale(0); }
 	10% { transform: translateY(90px) scale(0.1); }
 	20% { transform: translateY(80px) scale(0.2); }
