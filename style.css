@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+	font-size: 62.5%;
+}
+
+body {
+	display: flex;
+	place-content: center;
+	place-items: center;
+  width: 100vw;
+  height: 100dvh;
+  background: linear-gradient(45deg, #000ba8, #00c04a);
+	animation: bg-gradient 7s ease infinite;
+  background-size: 200% 200%;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	place-content: center;
+	place-items: center;
+	color: #34355B;
+	background-color: #FFFFFF;
+	padding: 4.8rem 6.4rem;
+	gap: 1.5rem;
+	border-radius: 0.5rem;
+	box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.80);
+}
+
+.container h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2.4rem;
+	font-weight: 700;
+}
+
+.container p {
+	font-family: 'DM Sans', sans-serif;
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
+.container #messageCard {
+	max-width: 32rem;
+	font-family: 'Dancing Script', cursive;
+	font-size: 2.4rem;
+	font-weight: 400;
+	color: #000;
+	text-align: center;
+	background-color: #E4EDF1;
+	padding: 1rem;
+	box-shadow: 2px 2px 2px 0px rgba(85, 85, 85, 0.50);
+	animation: mensagemSaindo 0.7s ease;
+}
+
+.container img {
+	width: 18rem;
+	margin-top: 2rem;
+	cursor: pointer;
+}
+
+.enableAnimation:hover{
+	animation: tremor 0.3s infinite;
+}
+
+.hidden {
+	display: none;
+}
+
+.container button {
+	cursor: pointer;
+	margin-top: 2.5rem;
+	background-color: #FF9500;
+	color: #FFF;
+	font-family: 'DM Sans', sans-serif;
+	font-size: 1.5rem;
+	font-weight: 700;
+	padding: 1.6rem;
+	border: none;
+	border-radius: .4rem;
+	transition: 300ms;
+}
+
+.container button:hover {
+	background-color: #db8103;
+}
+
+@keyframes bg-gradient {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+@keyframes tremor {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, -2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-2px, 2px); }
+  80% { transform: translate(2px, 2px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes mensagemSaindo {
+  0% { transform: translateY(100px) scale(0); }
+	10% { transform: translateY(90px) scale(0.1); }
+	20% { transform: translateY(80px) scale(0.2); }
+	30% { transform: translateY(70px) scale(0.3); }
+	40% { transform: translateY(60px) scale(0.4); }
+	50% { transform: translateY(50px) scale(0.5); }
+	60% { transform: translateY(40px) scale(0.6); }
+	70% { transform: translateY(30px) scale(0.7); }
+	80% { transform: translateY(20px) scale(0.8); }
+	90% { transform: translateY(10px) scale(0.9); }
+  100% { transform: translateY(0) scale(1); }
+}
