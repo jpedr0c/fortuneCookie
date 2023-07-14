@@ -3,7 +3,6 @@ const btnRestart = document.getElementById('btnRestart');
 const title = document.getElementById('title');
 const paragraph = document.getElementById('actionMessage');
 const messageCard = document.getElementById('messageCard');
-
 const messages = [
   "Acredite em si mesmo e alcançará grandes conquistas.",
   "Seja gentil em todas as suas ações e colherá bondade em retorno.",
@@ -25,28 +24,42 @@ const messages = [
   "Valorize as pequenas vitórias, elas são o que torna a jornada significativa.",
   "O amor é a chave para desbloquear a verdadeira felicidade na vida.",
   "A felicidade está nas coisas simples. Aprecie os momentos presentes.",
-]
+];
+const getRandomMessage = () => messages[Math.floor(Math.random() * messages.length)];
+
+function toggleScreen() {
+  btnRestart.classList.toggle('hidden');
+  messageCard.classList.toggle('hidden');
+  paragraph.classList.toggle('hidden');
+  cookie.classList.toggle('enableAnimation');
+}
+
+function setCookieImage(src, alt) {
+  cookie.src = src;
+  cookie.alt = alt;
+}
+
+function setTitleText(text) {
+  title.textContent = text;
+}
+
+function updateCookieState(isOpen) {
+  const cookieImagePath = isOpen ? "./assets/opened-cookie.svg" : "./assets/cookie.svg";
+  const cookieImageAlt = isOpen ? "Imagem de um biscoito da sorte aberto" : "Imagem de um biscoito da sorte";
+  const titleText = isOpen ? "Aqui está a sua sorte de hoje:" : "Qual é a sua sorte de hoje?";
+
+  setCookieImage(cookieImagePath, cookieImageAlt);
+  setTitleText(titleText);
+}
+
 
 cookie.addEventListener('click', () => {
-  btnRestart.classList.remove('hidden');
-  messageCard.classList.remove('hidden');
-  paragraph.classList.add('hidden');
-  cookie.classList.remove('enableAnimation');
-  cookie.src = "./assets/opened-cookie.svg";
-  cookie.alt = "Imagem de um biscoito da sorte aberto";
-  title.textContent = "Aqui está a sua sorte de hoje:";
-
-  const randomIndex = Math.floor(Math.random() * messages.length);
-  const randomMessage = messages[randomIndex];
-  messageCard.textContent = randomMessage;
+  toggleScreen();
+  updateCookieState(true);
+  messageCard.textContent = getRandomMessage();
 });
 
 btnRestart.addEventListener('click', () => {
-  btnRestart.classList.add('hidden');
-  messageCard.classList.add('hidden');
-  paragraph.classList.remove('hidden');
-  cookie.classList.add('enableAnimation');
-  cookie.src = "./assets/cookie.svg";
-  cookie.alt = "Imagem de um biscoito da sorte";
-  title.textContent = "Qual é a sua sorte de hoje?";
+  toggleScreen();
+  updateCookieState(false);
 });
