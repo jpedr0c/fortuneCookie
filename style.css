@@ -1,7 +1,7 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 :root {
@@ -12,7 +12,7 @@ body {
 	display: flex;
 	place-content: center;
 	place-items: center;
-  width: 100vw;
+	width: 100vw;
   height: 100dvh;
   background: linear-gradient(45deg, #000ba8, #00c04a);
 	animation: bg-gradient 7s ease infinite;
